@@ -1,0 +1,39 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.event-card {
+	height: 100%;
+    cursor: pointer;
+
+	.card-title {
+		margin-top: 10px;
+		color: v.$color2;
+	}
+
+	.card-subtitle,
+	.card-subtitle > * {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 5px;
+		color: v.$color1;
+        font-weight: 700;
+		margin-top: 5px;
+	}
+
+    .image{
+        overflow: hidden;
+    }
+
+	img {
+		width: 100%;
+		height: auto;
+        @include m.transition(transform 0.5s)
+	}
+
+	&:hover {
+		img {
+			@include m.transform(scale(1.2) rotate(10deg));
+		}
+	}
+}

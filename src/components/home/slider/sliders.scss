@@ -1,0 +1,29 @@
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as v;
+
+.main-slider {
+	.carousel-item {
+		height: calc(100vh - 110px);
+	}
+
+	.carousel-caption {
+		bottom: 50%;
+		color: v.$color2-opacity-70;
+		/* @include m.shadow(text, 0 0 15px v.$color2); */
+		@include m.transform(translateY(50%));
+
+		@media (min-width: 1200px) {
+			width: 50%;
+			text-align: left;
+		}
+	}
+
+	img {
+		object-fit: cover;
+		object-position: left center;
+
+		@media(min-width: 1200px){
+			object-position: right center;
+		}
+	}
+}

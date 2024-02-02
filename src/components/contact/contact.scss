@@ -1,0 +1,24 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.contact {
+	.card {
+		box-shadow: 0 0 15px -5px v.$color2;
+		border: none;
+        @include m.transform(translateY(70px));
+        margin-top: -70px;
+
+		h2 {
+			color: v.$color2;
+			margin-bottom: 30px;
+		}
+
+		.card-body {
+			padding: 50px;
+		}
+	}
+
+    iframe{
+        display: block;
+    }
+}

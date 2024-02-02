@@ -1,0 +1,37 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.instructor-card {
+	overflow: hidden;
+    cursor: pointer;
+
+	&:hover {
+		.card-title {
+			@include m.transform(translateY(0));
+		}
+
+        img{
+            @include m.transform(scale(1.2) rotate(5deg))
+        }
+	}
+
+	img {
+		object-fit: cover;
+		width: 100%;
+        @include m.transition(transform 0.5s);
+	}
+
+	.card-title {
+		background-color: v.$color1-opacity-50;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		text-align: center;
+		margin: 0;
+		padding: 10px;
+		@include m.transform(translateY(100%));
+		@include m.transition(transform 0.5s);
+
+	}
+}

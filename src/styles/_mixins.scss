@@ -1,0 +1,46 @@
+@use "./variables" as v;
+
+@mixin border-radius($val) {
+	@each $item in v.$vendors {
+		#{$item}border-radius: $val;
+	}
+}
+
+@mixin transform($val) {
+	@each $item in v.$vendors {
+		#{$item}transform: $val;
+	}
+}
+
+@mixin transition($val) {
+	@each $item in v.$vendors {
+		#{$item}transition: $val;
+	}
+}
+
+@mixin flex($fd: column, $jc: space-between, $ai: stretch, $gap: 0, $fw: wrap) {
+	display: flex;
+	flex-direction: $fd;
+	justify-content: $jc;
+	align-items: $ai;
+	gap: $gap;
+	flex-wrap: $fw;
+}
+
+@mixin reset-list($m: 0, $p: 0) {
+	list-style-type: none;
+	margin: $m;
+	padding: $p;
+}
+
+@mixin shadow($type, $val) {
+	#{$type}-shadow: $val;
+}
+
+@mixin fligran($bgColor){
+	content:"";
+	position: absolute;
+	top:0; bottom:0; left:0; right:0;
+	background-color: $bgColor;
+	z-index: 1;
+}

@@ -1,0 +1,16 @@
+@use "../../styles/variables" as v;
+.login-form{
+
+    .card{
+        border-top:5px solid v.$color1;
+
+        h5{
+            margin-bottom: 20px;
+            color: v.$color2-opacity-50
+        }
+
+        button{
+            width: 100%;
+        }
+    }
+}

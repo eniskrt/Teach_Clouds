@@ -1,0 +1,14 @@
+@use "../../../styles/variables" as v;
+
+.page-header{
+    background-image: linear-gradient(90deg, v.$color3, v.$color1-opacity-50, v.$color3);
+    padding: 40px 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    h1{
+        font-weight: 700;
+        color: v.$color2
+    }
+    
+}

@@ -1,0 +1,28 @@
+@use "../../styles/variables" as v;
+@use "../../styles/mixins" as m;
+
+.contact-form {
+	.form-control,
+	label,
+	.input-group-text {
+		border: none;
+		background: none;
+		color: v.$color1;
+	}
+
+	.form-control {
+		border-bottom: 1px solid v.$color1-opacity-50;
+		@include m.border-radius(0);
+	}
+
+	.is-invalid {
+		.form-control {
+			border-bottom: 1px solid rgba(255, 0, 0, 0.356);
+		}
+
+		label,
+		.input-group-text {
+			color: rgba(255, 0, 0, 0.356);
+		}
+	}
+}

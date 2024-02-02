@@ -1,0 +1,20 @@
+@use "../../../styles/variables" as v;
+@use "../../../styles/mixins" as m;
+
+.upcoming-events{
+
+    h2{
+        color: v.$color2;
+        margin-bottom: 50px;
+        @include m.flex($fd: row)
+    }
+
+    .swiper-slide{
+        height: auto;
+    }
+
+    
+	.prev, .next{
+		cursor: pointer;
+	}
+}

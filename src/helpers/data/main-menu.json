@@ -1,0 +1,22 @@
+[
+	{
+		"title": "Home",
+		"link": "/"
+	},
+	{
+		"title": "Courses",
+		"link": "/courses"
+	},
+	{
+		"title": "Events",
+		"link": "/events"
+	},
+	{
+		"title": "About",
+		"link": "/about"
+	},
+	{
+		"title": "Contact",
+		"link": "/contact"
+	}
+]
