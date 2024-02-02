@@ -58,7 +58,7 @@ export const createManagerAction = async (prevState, formData) => {
 	}
 
 	revalidatePath("/dashboard/manager");
-	redirect("/dashboard/manager?success=true");
+	redirect(`/dashboard/manager?msg=${encodeURI("Manager was created.")}`);
 };
 
 export const updateManagerAction = async (prevState, formData) => {
@@ -82,18 +82,19 @@ export const updateManagerAction = async (prevState, formData) => {
 	}
 
 	revalidatePath("/dashboard/manager");
-	redirect("/dashboard/manager?success=true");
+	redirect(`/dashboard/manager?msg=${encodeURI("Manager was updated.")}`);
 };
 
 export const deleteManagerAction = async (id) => {
 	if (!id) throw new Error("id is missing");
 
 	const res = await deleteManager(id);
-	const data = res.json();
+	const data = await res.json();
 
 	if (!res.ok) {
 		throw new Error(data.message);
 	}
 
 	revalidatePath("/dashboard/manager");
+	redirect(`/dashboard/manager?msg=${encodeURI("Manager was deleted.")}`);
 };

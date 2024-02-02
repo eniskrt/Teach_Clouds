@@ -3,7 +3,7 @@
         { "title": "Dashboard", "link": "/dashboard"},
         { "title": "Admin Management", "link": "/dashboard/admin"},
         { "title": "Manager Management", "link": "/dashboard/manager"},
-        { "title": "Assistan Manager Management", "link": "/dashboard/assistant-manager"},
+        { "title": "Assistant Manager Management", "link": "/dashboard/assistant-manager"},
         { "title": "Education Terms", "link": "/dashboard/education-term"},
         { "title": "Lesson Management", "link": "/dashboard/lesson"},
         { "title": "Program Management", "link": "/dashboard/program"},
@@ -13,7 +13,7 @@
     ],
     "manager" : [
         { "title": "Dashboard", "link": "/dashboard"},
-        { "title": "Assistan Manager Management", "link": "/dashboard/assistant-manager"},
+        { "title": "Assistant Manager Management", "link": "/dashboard/assistant-manager"},
         { "title": "Contact Message", "link": "/dashboard/contact-message"}
     ],
     "assistantmanager" : [

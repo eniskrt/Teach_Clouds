@@ -58,7 +58,7 @@ export const createAssistantManagerAction = async (prevState, formData) => {
 	}
 
 	revalidatePath("/dashboard/assistant-manager");
-	redirect("/dashboard/assistant-manager?success=true");
+	redirect(`/dashboard/assistant-manager?msg=${encodeURI("Assistant Manager was created.")}`);
 };
 
 export const updateAssistantManagerAction = async (prevState, formData) => {
@@ -82,18 +82,19 @@ export const updateAssistantManagerAction = async (prevState, formData) => {
 	}
 
 	revalidatePath("/dashboard/assistant-manager");
-	redirect("/dashboard/assistant-manager?success=true");
+	redirect(`/dashboard/assistant-manager?msg=${encodeURI("Assistant Manager was updated.")}`);
 };
 
 export const deleteAssistantManagerAction = async (id) => {
 	if (!id) throw new Error("id is missing");
 
 	const res = await deleteAssistantManager(id);
-	const data = res.json();
+	const data = await res.json();
 
 	if (!res.ok) {
 		throw new Error(data.message);
 	}
 
 	revalidatePath("/dashboard/assistant-manager");
+	redirect(`/dashboard/assistant-manager?msg=${encodeURI("Assistant Manager was deleted.")}`);
 };

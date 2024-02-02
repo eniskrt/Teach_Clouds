@@ -58,18 +58,19 @@ export const createAdminAction = async (prevState, formData) => {
 	}
 
 	revalidatePath("/dashboard/admin");
-	redirect("/dashboard/admin?success=true");
+	redirect(`/dashboard/admin?msg=${encodeURI("Admin was created.")}`);
 };
 
 export const deleteAdminAction = async (id) => {
 	if (!id) throw new Error("id is missing");
 
 	const res = await deleteAdmin(id);
-	const data = res.json();
+	//const data = await res.json();
 
 	if (!res.ok) {
-		throw new Error(data.message);
+		throw new Error("Something went wrong.");
 	}
 
 	revalidatePath("/dashboard/admin");
+	redirect(`/dashboard/admin?msg=${encodeURI("Admin was deleted.")}`);
 };
